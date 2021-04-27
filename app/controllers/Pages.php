@@ -14,11 +14,10 @@ class Pages extends Controller
 
     public function index(){
         // echo 'index method is loaded<br>';
-        $time = $this->pagesModel->getTime();
+
         $data = array(
             'title' => 'Welcome to Pages',
-            'content' => $time
-        );
+            'content' => 'content of the page');
         $this->view('pages/index', $data);
     }
 }
