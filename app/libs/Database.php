@@ -17,26 +17,28 @@ class Database
      */
     public function __construct()
     {
-        $dsn = 'mysql:host='.$this->host.';dbname='.$this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $options = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             $this->error = $e->getMessage();
-            echo $this->error.'<br>';
+            echo $this->error . '<br>';
         }
     }
 
-    public function query($sql){
+    public function query($sql)
+    {
         $this->stmt = $this->dbh->prepare($sql);
     }
 
-    public function bind($param, $value, $type=null){
-        if(is_null($type)){
-            switch (true){
+    public function bind($param, $value, $type = null)
+    {
+        if (is_null($type)) {
+            switch (true) {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
                     break;
@@ -53,7 +55,8 @@ class Database
         $this->stmt->bindParam($param, $value, $type);
     }
 
-    public function execute(){
+    public function execute()
+    {
         return $this->stmt->execute();
     }
 
@@ -69,7 +72,8 @@ class Database
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function rowCount(){
+    public function rowCount()
+    {
         return $this->stmt->rowCount();
     }
 }
