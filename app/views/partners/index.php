@@ -10,7 +10,7 @@
         <th scope="col">E-post</th>
         <th scope="col">Telefon</th>
         <th scope="col">Tegevusala</th>
-        <th scope="col">Tegevusala täpsemalt</th>
+
         <th scope="col">Asukoht</th>
     </tr>
     </thead>
@@ -22,8 +22,7 @@
             <td><?php echo $partner->reg_nr; ?></td>
             <td><?php echo $partner->email; ?></td>
             <td><?php echo $partner->phone; ?></td>
-            <td><?php echo $partner->activity; ?></td>
-            <td><?php echo $partner->activity_details; ?></td>
+            <td><?php echo $partner->partner_activity; ?></td>
             <td><?php echo $partner->location; ?></td>
         </tr>
     <?php endforeach; ?>
