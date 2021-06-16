@@ -1,8 +1,5 @@
 <?php require_once APPROOT . '/views/inc/header.php'; ?>
-<h1><?php echo $data['title']; ?></h1>
-<div class="row mb-3">
-    <div class="col-md-6"><a href="<?php echo URLROOT ?>/partners/add" class="btn btn-primary">Lisa partner</a></div>
-</div>
+<h1><?php echo $data['activity']->name; ?></h1>
 <!-- table -->
 <table class="table table-striped">
     <thead>
@@ -10,11 +7,9 @@
         <th scope="col">nr</th>
         <th scope="col">Nimi</th>
         <th scope="col">Registri kood</th>
-        <th scope="col">E-post</th>
-        <th scope="col">Telefon</th>
-        <th scope="col">Tegevusala</th>
-        <th scope="col">Asukoht</th>
-        <th scope="col">Detailne info</th>
+        <th scope="col">e-post</th>
+        <th scope="col">telefon</th>
+        <th scope="col">asukoht</th>
     </tr>
     </thead>
     <tbody>
@@ -25,9 +20,7 @@
             <td><?php echo $partner->reg_nr; ?></td>
             <td><?php echo $partner->email; ?></td>
             <td><?php echo $partner->phone; ?></td>
-            <td><?php echo $partner->partner_activity; ?></td>
             <td><?php echo $partner->location; ?></td>
-            <td><a href="<?php echo URLROOT . '/partners/show/' . $partner->partner_id; ?>">Vaata</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
