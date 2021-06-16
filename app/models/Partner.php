@@ -20,7 +20,10 @@ class Partner
                                 activity.name as partner_activity,
                                 partners.id as partner_id
                                 FROM partners 
-                                INNER JOIN activity ON partners.activity = activity.id');
+                            
+                                INNER JOIN activity ON partners.activity = activity.id
+                                ORDER BY partners.name');
+
         $result = $this->db->getAll();
         return $result;
     }

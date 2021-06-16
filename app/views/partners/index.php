@@ -2,6 +2,7 @@
 <h1><?php echo $data['title']; ?></h1>
 <div class="row mb-3">
     <div class="col-md-6"><a href="<?php echo URLROOT ?>/partners/add" class="btn btn-primary">Lisa partner</a></div>
+
 </div>
 <!-- table -->
 <table class="table table-striped">
