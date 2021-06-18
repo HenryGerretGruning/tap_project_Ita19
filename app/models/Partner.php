@@ -22,7 +22,7 @@ class Partner
                                 FROM partners 
                             
                                 INNER JOIN activity ON partners.activity = activity.id
-                                ORDER BY partners.name');
+                                ');
 
         $result = $this->db->getAll();
         return $result;
